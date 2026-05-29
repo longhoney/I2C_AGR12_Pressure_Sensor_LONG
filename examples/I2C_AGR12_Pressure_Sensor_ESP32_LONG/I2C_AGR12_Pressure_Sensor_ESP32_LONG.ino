@@ -82,11 +82,11 @@ bool readPressure() {
     
     // Ghép 2 byte dữ liệu thành giá trị 16 bit (kPa * 10)
     // kPa = (DATA0 << 8) | DATA1; [10]
-    uint16_t raw_pressure_data = ((uint16_t)data0 << 8) | data1;
+    uint16_t raw_pressure_data = ((uint16_t)data0 << 8) | (uint16_t)data1;
     
     // Ép kiểu thành số nguyên có dấu 16 bit (Signed Short Int) 
     // để xử lý áp suất âm (nếu có, ví dụ AGR12xxPxx hoặc AGR12xxNxx) [10]
-    int16_t signed_raw_data = (int16_t)raw_pressure_data; 
+    // int16_t signed_raw_data = (int16_t)raw_pressure_data; 
     
     // Chia cho 10.0 để có giá trị áp suất thực tế (kPa) [10]
     float pressure_kPa = (float)signed_raw_data / 10.0;
