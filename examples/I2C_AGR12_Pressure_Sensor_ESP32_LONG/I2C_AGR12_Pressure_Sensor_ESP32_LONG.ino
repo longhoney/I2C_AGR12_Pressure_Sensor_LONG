@@ -89,11 +89,11 @@ bool readPressure() {
     // int16_t signed_raw_data = (int16_t)raw_pressure_data; 
     
     // Chia cho 10.0 để có giá trị áp suất thực tế (kPa) [10]
-    float pressure_kPa = (float)signed_raw_data / 10.0;
+    float pressure_kPa = (float)raw_pressure_data / 10.0;
     
     // BƯỚC 6: Hiển thị kết quả
     Serial.print("Raw: ");
-    Serial.print(signed_raw_data);
+    Serial.print(raw_pressure_data);
     Serial.print(" (0x");
     Serial.print(data0, HEX);
     Serial.print(data1, HEX);
