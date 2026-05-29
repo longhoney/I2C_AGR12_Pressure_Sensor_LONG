@@ -114,6 +114,6 @@ void i2c_100Khz()
   // *** THIẾT LẬP TỐC ĐỘ I2C ***
   Wire.setClock(100000); 
   Wire.begin(); 
-  
+  Wire.setTimeOut(100);
   Serial.println("Khoi tao cam bien AGR12 I2C voi toc do 100 kHz...");
 }
