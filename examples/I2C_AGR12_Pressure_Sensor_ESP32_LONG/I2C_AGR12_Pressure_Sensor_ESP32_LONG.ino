@@ -82,7 +82,7 @@ bool readPressure() {
     
     // Ghép 2 byte dữ liệu thành giá trị 16 bit (kPa * 10)
     // kPa = (DATA0 << 8) | DATA1; [10]
-    uint16_t raw_pressure_data = (data0 << 8) | data1;
+    uint16_t raw_pressure_data = ((uint16_t)data0 << 8) | data1;
     
     // Ép kiểu thành số nguyên có dấu 16 bit (Signed Short Int) 
     // để xử lý áp suất âm (nếu có, ví dụ AGR12xxPxx hoặc AGR12xxNxx) [10]
