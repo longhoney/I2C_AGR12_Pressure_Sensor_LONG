@@ -75,7 +75,7 @@ bool readPressure() {
       Serial.print(crc, HEX);
       Serial.print(", CRC tinh: ");
       Serial.println(calculated_crc, HEX);
-      // return false;
+      return false;
     }
 
     // BƯỚC 5: Chuyển đổi dữ liệu thành giá trị áp suất 
