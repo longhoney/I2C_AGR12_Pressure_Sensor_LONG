@@ -22,4 +22,8 @@ Xem chi tiết tại thư mục "examples"
 Xem chi tiết tại thư mục "Doc"
 
 # Hướng dẫn tải repository
+Bước 1
+<img width="1902" height="858" alt="image" src="https://github.com/user-attachments/assets/6747bc1f-3ccd-4925-ae3f-f5686fb33977" />
 
+Bước 2
+<img width="1134" height="715" alt="image" src="https://github.com/user-attachments/assets/12f8ca28-8efd-43d9-9010-d046b63f8081" />
