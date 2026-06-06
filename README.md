@@ -20,3 +20,6 @@ Xem chi tiết tại thư mục "examples"
 
 # Datasheet
 Xem chi tiết tại thư mục "Doc"
+
+# Hướng dẫn tải repository
+
