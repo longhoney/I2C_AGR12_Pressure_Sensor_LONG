@@ -43,4 +43,5 @@ _Chọn board_
 <img width="1920" height="658" alt="image" src="https://github.com/user-attachments/assets/da167019-8797-4c6e-ab06-3ddea1913c05" />
 
 4. Bấm Upload để nạp code
-<img width="1915" height="624" alt="image" src="https://github.com/user-attachments/assets/46e82ca6-9a28-437d-bd45-1f7566f57976" />
+<img width="1920" height="616" alt="image" src="https://github.com/user-attachments/assets/abb57223-aa70-4bf8-8b7e-8694ddfdb742" />
+
