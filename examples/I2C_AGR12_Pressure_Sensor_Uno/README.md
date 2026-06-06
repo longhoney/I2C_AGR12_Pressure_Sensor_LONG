@@ -26,3 +26,18 @@ BƯỚC 6: Hiển thị kết quả
 - Dữ liệu thô sau khi đã ghép 2 byte dữ liệu thành giá trị 16 bit (kPa * 10) | Giá trị áp suất thực tế
 
 # Hướng dẫn nạp code với ArduinoIDE
+1. Trỏ đường dẫn sketch book đến thư mục chứa chương trình trong  File/Preferences
+<img width="1225" height="816" alt="image" src="https://github.com/user-attachments/assets/b84f2bc1-ad83-437a-8b0b-108654035439" />
+
+2. Chọn chương trình "I2C_AGR12_Pressure_Sensor_Uno" tại File/Sketchbook/examples/
+<img width="1920" height="1023" alt="image" src="https://github.com/user-attachments/assets/806c0233-ab95-4b0b-b38f-72374eca3b7f" />
+
+3. Board chọn Arduino Uno, Chọn PORT tương ứng với cổng COM của mạch Arduino (kiểm tra tại Device Manager)
+_Kiểm tra COM tại Device Manager_
+<img width="1920" height="1380" alt="image" src="https://github.com/user-attachments/assets/8eec95d7-d04f-4ccf-81d9-743b45e8f141" />
+
+_Chọn board_
+<img width="1920" height="658" alt="image" src="https://github.com/user-attachments/assets/da167019-8797-4c6e-ab06-3ddea1913c05" />
+
+4. Bấm Upload để nạp code
+<img width="1915" height="624" alt="image" src="https://github.com/user-attachments/assets/46e82ca6-9a28-437d-bd45-1f7566f57976" />
