@@ -64,26 +64,30 @@ bool readPressure() {
   delay(WAIT_TIME_MS);
 
   // BƯỚC 3: Yêu cầu đọc 3 byte dữ liệu (DATA0, DATA1, CRC) [8]
-  uint8_t tempCount = Wire.requestFrom(AGR12_I2C_ADDRESS, 4);
-  
-  Serial.println("count: " + String(tempCount));
-  if (tempCount >= 3) {
-    uint8_t noData = Wire.read(); 
-    uint8_t data0 = Wire.read(); // Byte dữ liệu áp suất cao (DATA0) [8]
-    uint8_t data1 = Wire.read(); // Byte dữ liệu áp suất thấp (DATA1) [8]
-    uint8_t crc = Wire.read();   // Byte CRC kiểm tra [8]
+    // Sua thanh doc 3 byte theo frame cua datasheet
+      // uint8_t tempCount = Wire.requestFrom(AGR12_I2C_ADDRESS, 4);
+    uint8_t tempCount = Wire.requestFrom(AGR12_I2C_ADDRESS, 3);
 
-    // BƯỚC 4: Tính toán và kiểm tra CRC
-    // CRC là kết quả của DATA0 XOR DATA1 [24, Bảng 5]
-    uint8_t calculated_crc = data0 ^ data1; 
-    
-    if (calculated_crc != crc) {
-      Serial.print("Loi CRC! Du lieu khong hop le. CRC nhan: ");
-      Serial.print(crc, HEX);
-      Serial.print(", CRC tinh: ");
-      Serial.println(calculated_crc, HEX);
-      // return false;
-    }
+    Serial.println("count: " + String(tempCount));
+    // Thay doi dieu kien
+      // if (tempCount >= 3) {
+    if (tempCount == 3) {
+      // uint8_t noData = Wire.read();  //Chi doc 3 byte du lieu
+      uint8_t data0 = Wire.read(); // Byte dữ liệu áp suất cao (DATA0) [8]
+      uint8_t data1 = Wire.read(); // Byte dữ liệu áp suất thấp (DATA1) [8]
+      uint8_t crc = Wire.read();   // Byte CRC kiểm tra [8]
+
+      // BƯỚC 4: Tính toán và kiểm tra CRC
+      // CRC là kết quả của DATA0 XOR DATA1 [24, Bảng 5]
+      uint8_t calculated_crc = data0 ^ data1; 
+      
+      if (calculated_crc != crc) {
+        Serial.print("Loi CRC! Du lieu khong hop le. CRC nhan: ");
+        Serial.print(crc, HEX);
+        Serial.print(", CRC tinh: ");
+        Serial.println(calculated_crc, HEX);
+        // return false;
+      }
 
     // BƯỚC 5: Chuyển đổi dữ liệu thành giá trị áp suất 
     
@@ -99,14 +103,20 @@ bool readPressure() {
     float pressure_kPa = (float)signed_raw_data / 10.0;
     
     // BƯỚC 6: Hiển thị kết quả
-    Serial.print("Raw: ");
-    Serial.print(signed_raw_data);
-    Serial.print(" (0x");
-    Serial.print(data0, HEX);
-    Serial.print(data1, HEX);
-    Serial.print(") | Ap suat: ");
-    Serial.print(pressure_kPa, 1);
-    Serial.println(" kPa");
+    // Thay doi cach hien thi ket qua
+      // Serial.print("Raw: ");
+      // Serial.print(signed_raw_data);
+      // Serial.print(" (0x");
+      // Serial.print(data0, HEX);
+      // Serial.print(data1, HEX);
+      // Serial.print(") | Ap suat: ");
+      // Serial.print(pressure_kPa, 1);
+      // Serial.println(" kPa");
+    Serial.print("0x"); Serial.print(data0, HEX); Serial.print(" ");
+    Serial.print("0x"); Serial.print(data1, HEX); Serial.print(" ");
+    Serial.print("0x"); Serial.println(crc, HEX); // Serial.print(" | ");
+    Serial.print("CRC Uno tinh la: "); Serial.print("0x");Serial.println(calculated_crc, HEX);
+    Serial.print("Ap suat: "); Serial.print(pressure_kPa, 1); Serial.println(" kPa");
 
     return true;
 
