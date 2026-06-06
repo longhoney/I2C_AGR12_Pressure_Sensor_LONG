@@ -23,6 +23,13 @@ const uint8_t CMD_MEASURE_HIGH = 0xAC; // Byte lệnh 1 [8]
 const uint8_t CMD_MEASURE_LOW = 0x12;  // Byte lệnh 2 [8]
 const int WAIT_TIME_MS = 80;           // Thời gian chờ sau khi gửi lệnh đo (ms) [8]
 
+//XIAO ESP32C3 pin
+// const int SDApin = D4;
+// const int SCLpin = D5;
+//Vietduino ESP32
+const int SDApin = 21;
+const int SCLpin = 22;
+
 void setup() {
   Serial.begin(115200);
   // Wire.begin(); // Khởi tạo I2C bus
@@ -112,8 +119,7 @@ bool readPressure() {
 void i2c_50Khz()
 {
   // *** THIẾT LẬP TỐC ĐỘ I2C ***
+  Wire.begin(SDApin, SCLpin); 
   Wire.setClock(50000); 
-  Wire.begin(); 
-  
   Serial.println("Khoi tao cam bien AGR12 I2C voi toc do 50 kHz...");
 }
