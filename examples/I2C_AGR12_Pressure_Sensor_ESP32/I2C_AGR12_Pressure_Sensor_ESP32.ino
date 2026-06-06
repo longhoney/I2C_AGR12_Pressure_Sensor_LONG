@@ -120,6 +120,8 @@ void i2c_50Khz()
 {
   // *** THIẾT LẬP TỐC ĐỘ I2C ***
   Wire.begin(SDApin, SCLpin); 
-  Wire.setClock(50000); 
-  Serial.println("Khoi tao cam bien AGR12 I2C voi toc do 50 kHz...");
+  // Wire.setClock(50000);
+  // Serial.println("Khoi tao cam bien AGR12 I2C voi toc do 50 kHz...");
+  Wire.setClock(10000); //Giam toc do xuong 10 kHz
+  Serial.println("Khoi tao cam bien AGR12 I2C voi toc do 10 kHz...");
 }
