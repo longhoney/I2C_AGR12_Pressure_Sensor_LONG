@@ -2,6 +2,8 @@
 ### I2C_AGR12_Pressure_Sensor_Uno
 _Chương trình chạy với tần số 50kHz, lặp lại mỗi 1 giây 1 lần_
 
+_Sử đụng được với vi điều khiển: Arduino Uno, ESP8266_
+
 BƯỚC 1: Gửi lệnh đo lường (0xAC 0x12)
 (Xử lý lỗi truyền I2C nếu cần)
 
