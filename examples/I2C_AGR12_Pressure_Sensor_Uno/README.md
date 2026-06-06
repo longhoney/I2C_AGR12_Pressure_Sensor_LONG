@@ -5,6 +5,9 @@
 4. [Dây DC Cái 5.5 x 2.1mm Female DC Power Jack Wire](https://hshop.vn/day-dc-cai-5-5-2-1-mm)
 5. [Mạch điều khiển tốc độ động cơ Mini PWM DC Motor Speed Controller 10A](https://hshop.vn/mach-dieu-khien-toc-do-dong-co-mini-pwm-dc-motor-speed-controller-10a)
 
+# Phần mềm
+1. ArduinoIDE
+2. Driver [chip nạp code (CH340)](https://sparks.gogo.co.nz/ch340.html)
 # Sơ đồ kết nối
 
 # Logic của chương trình
