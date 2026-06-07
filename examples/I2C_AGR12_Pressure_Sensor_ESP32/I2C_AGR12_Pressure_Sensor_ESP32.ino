@@ -23,10 +23,13 @@ const uint8_t CMD_MEASURE_HIGH = 0xAC; // Byte lệnh 1 [8]
 const uint8_t CMD_MEASURE_LOW = 0x12;  // Byte lệnh 2 [8]
 const int WAIT_TIME_MS = 80;           // Thời gian chờ sau khi gửi lệnh đo (ms) [8]
 
-//XIAO ESP32C3 pin
+// WeMos D1 R2 ESP8266
+// const int SDApin = D2;
+// const int SCLpin = D1;
+// XIAO ESP32C3 pin
 // const int SDApin = D4;
 // const int SCLpin = D5;
-//Vietduino ESP32
+// Vietduino ESP32
 const int SDApin = 21;
 const int SCLpin = 22;
 
