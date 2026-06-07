@@ -9,6 +9,7 @@
 1. ArduinoIDE
 2. Driver [chip nạp code (CH340)](https://sparks.gogo.co.nz/ch340.html)
 # Sơ đồ kết nối
+![alt text](cirkit_ESP32_AGR12-1.png)
 
 # Logic của chương trình
 BƯỚC 1: Gửi lệnh đo lường (0xAC 0x12) (Xử lý lỗi truyền I2C nếu cần)
